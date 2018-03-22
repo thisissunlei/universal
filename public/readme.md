@@ -73,7 +73,7 @@ jscode:
 ```js
 intl.getHTML('TIP');  
 ```
-3： 如果本地资源包没有配置指定的key 你可以设置默认值 ：
+3:如果本地资源包没有配置指定的key 你可以设置默认值 ：
 
 JS code:
 ```js
@@ -87,7 +87,7 @@ intl.get('not-exist-key').d('default message') // "default message"
 intl.getHTML('not-exist-key').d(<div>hello</div>) // React.Element with "<div>hello</div>"
 ```
 
-4. 如果消息含有变量 直接将变量名替换为字符串 ：
+4:如果消息含有变量 直接将变量名替换为字符串 ：
 
 Locale data:
 

@@ -82,7 +82,7 @@ class App extends Component {
   
   //首次加载 
   loadLocales() {
-   let { currentLocale } = this.state;
+   let { currentLocale } = this.state; // 默认首次加载的是英文
    this.certify(currentLocale)
       .then(() => {
         // 加载完成之后 再render 刷新页面 
@@ -90,8 +90,8 @@ class App extends Component {
       });
   }
 
+  // 加载多个可供选择语言切换的下拉框
   renderLocaleSelector() {
-    // 加载多个语言切换的下拉框
     return (
       <select onChange={ this.onSelectLocale.bind(this) } defaultValue="">
         <option value="" disabled>Change Language</option>
@@ -101,10 +101,9 @@ class App extends Component {
       </select>
     );
   }
-
-  onSelectLocale(e) {
+ // 切换更新本地语言环境
+  onSelectLocale(e) { 
     let currentLocale = e.target.value;
-    console.log('currentLocale' +currentLocale);
     this.certify(currentLocale)
       .then( () => {
         // 刷新页面 显示 
