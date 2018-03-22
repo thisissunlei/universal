@@ -1,11 +1,11 @@
 ﻿
 
-# 一 :项目依赖注入   
+# 一 项目依赖注入   
  ```js
    npm install react-intl-universal --save 
  ```  
 
- # 二 :初始化 
+ # 二 初始化 
  
  ```js
  //引入 
@@ -28,7 +28,7 @@ intl.init({
 
  // 以后在项目中切换语言环境时 可以从接口获取当前语言配置 如'zh-CN''en-US'等 再更新this.state.currentLocale 从而实现页面刷新 
 ```
-# 三: 组件中显示 
+# 三 组件中显示 
 
  ```js
 JS code:
@@ -55,35 +55,35 @@ JS code:
   "SIMPLE": "简单的句子",
   }
  ```
-# 四: 项目中具体替换的json 变量值等应用
+# 四  项目中具体替换的json 变量值等应用
 
-1:如果只是返回字符串消息 如上面所示:
+1:如果只是返回字符串消息 如上面所示
 
-local Data:
+local Data
 ```json
    {"SIMPLE": "Simple Sentence",}
 ```
 
-JS code:
+JS code
  ```js
    {intl.get('SIMPLE')} 
 ``` 
 
-2:  如果 是要返回的是html 消息：
+2  如果 是要返回的是html 消息
 
-local Data：
+local Data
 
 ```json
 { "TIP": "This is <span style='color:red'>HTML</span>" }
 ```
 
-JS code:
+JS code
 ```js
 intl.getHTML('TIP');  
 ```
 3:如果本地资源包没有配置指定的key 你可以设置默认值:
 
-JS code:
+JS code
 ```js
 intl.get('not-exist-key').defaultMessage('default message')  
 //也可以设置简写模式   "default message"
@@ -96,27 +96,27 @@ intl.getHTML('not-exist-key').d(<div>hello</div>) // React.Element with "<div>he
 
 4: 如果消息含有变量 直接将变量名替换为字符串:
 
-Locale data:
+Locale data
 
 ```json
 { "HELLO": "Hello, {name}. Welcome to {where}!" }
 ```
 
-JS code:
+JS code
 
 ```js
 intl.get('HELLO', {name:'Tony', where:'Alibaba'}) // "Hello, Tony. Welcome to Alibaba!"
 ```
 
-5: 复数形式与千位符:
+5: 复数形式与千位符
 
-Locale data:
+Locale data
 
 ```json
 
 { "PHOTO": "You have {num, plural, =0 {no photos.} =1 {one photo.} other {# photos.}}" }
 ```
-JS code:
+JS code
 
 ```js
 intl.get('PHOTO', {num:0}); // "You have no photos."
@@ -124,23 +124,23 @@ intl.get('PHOTO', {num:1}); // "You have one photo."
 intl.get('PHOTO', {num:1000000}); // "You have 1,000,000 photos."
 ```
 
-6: 显示的货币:
+6: 显示的货币
 
-Locale data:
+Locale data
 
 ```json
 { "SALE_PRICE": "The price is {price, number, USD}" } // CNY (人名币)  USD (美元)
 ```
-JS code:
+JS code
 
 ```js
 intl.get('SALE_PRICE', {price:123456.78}); // The price is $123,456.78 
 ```
 此时的三个参数都是可调的 第一个是字段名 第二个是类型 第三个是format 
 
-7: 显示日期:
+7: 显示日期
 
-Locale data:
+Locale data
 ```json
 
 {
@@ -149,7 +149,7 @@ Locale data:
 }
 ``` 
 
-JS code:
+JS code
 ```js
 
 intl.get('SALE_START', {start:new Date()}); // Sale begins 4/19/2017
@@ -165,7 +165,7 @@ intl.get('SALE_END', {end:new Date()}); // Sale ends April 19, 2017
 
  8: 时间 
 
- Locale data:
+ Locale data
 
 ```json
 {
@@ -173,7 +173,7 @@ intl.get('SALE_END', {end:new Date()}); // Sale ends April 19, 2017
 }
 ```
 
-JS code:
+JS code
 ```js
 
 intl.get('COUPON', {expires:new Date()}); // Coupon expires at 6:45:44 PM

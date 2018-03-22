@@ -85,7 +85,7 @@ class App extends Component {
    let { currentLocale } = this.state; // 默认首次加载的是英文
    this.certify(currentLocale)
       .then(() => {
-        // 加载完成之后 再render 刷新页面 
+        // 加载完成之后 再render 更新页面 
         this.setState({ initDone: true });
       });
   }
